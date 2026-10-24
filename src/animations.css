@@ -1,0 +1,237 @@
+/* ===================================================
+   SPOTLESS IN MINUTES – Animations & Dynamic Card Physics
+   Cards rearrange, move, and assemble on scroll
+   =================================================== */
+
+/* Container 3D Perspective */
+.services-quad-grid,
+.process-steps-grid,
+.about-triad,
+.stats-grid,
+.brands-table-card,
+.contact-cards-row,
+.founder-card,
+.dependable-card,
+.partner-card,
+.discuss-grid {
+  perspective: 1000px;
+}
+
+/* Base Card Motion Setup */
+.service-horizontal-card,
+.step-card,
+.contact-card,
+.stat-item,
+.about-triad > div,
+.founder-card,
+.dependable-card,
+.partner-card,
+.discuss-form-card,
+.contact-form-col {
+  opacity: 0;
+  will-change: transform, opacity;
+  transition: 
+    opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.75s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.35s ease;
+}
+
+/* --- Alternating Initial Rearrangement States --- */
+
+/* Odd Service Cards: Enter from left-down with counter-clockwise tilt */
+.services-quad-grid > .service-horizontal-card:nth-child(odd) {
+  transform: translate3d(-38px, 50px, 0) rotate(-2deg) scale(0.95);
+}
+
+/* Even Service Cards: Enter from right-down with clockwise tilt */
+.services-quad-grid > .service-horizontal-card:nth-child(even) {
+  transform: translate3d(38px, 50px, 0) rotate(2deg) scale(0.95);
+}
+
+/* Process Steps 2x2 Grid: Dynamic 4-corner convergence */
+.process-steps-grid > .step-card:nth-child(1) {
+  transform: translate3d(-35px, 40px, 0) rotate(-2.5deg) scale(0.94);
+}
+.process-steps-grid > .step-card:nth-child(2) {
+  transform: translate3d(35px, 40px, 0) rotate(2.5deg) scale(0.94);
+}
+.process-steps-grid > .step-card:nth-child(3) {
+  transform: translate3d(-35px, 55px, 0) rotate(-1.5deg) scale(0.94);
+}
+.process-steps-grid > .step-card:nth-child(4) {
+  transform: translate3d(35px, 55px, 0) rotate(1.5deg) scale(0.94);
+}
+
+/* Stats Items */
+.stats-grid > .stat-item {
+  transform: translate3d(0, 35px, 0) scale(0.9);
+}
+
+/* About Triad (3-column) */
+.about-triad > .about-col-team {
+  transform: translate3d(-40px, 45px, 0) rotate(-1.5deg) scale(0.96);
+}
+.about-triad > .about-col-values {
+  transform: translate3d(0, 50px, 0) scale(0.95);
+}
+.about-triad > .about-col-founder {
+  transform: translate3d(40px, 45px, 0) rotate(1.5deg) scale(0.96);
+}
+
+/* Contact Cards (3-column row) */
+.contact-cards-row > .contact-card:nth-child(1) {
+  transform: translate3d(-30px, 45px, 0) scale(0.95);
+}
+.contact-cards-row > .contact-card:nth-child(2) {
+  transform: translate3d(0, 50px, 0) scale(0.95);
+}
+.contact-cards-row > .contact-card:nth-child(3) {
+  transform: translate3d(30px, 45px, 0) scale(0.95);
+}
+
+/* Feature Large Cards */
+.founder-card,
+.dependable-card,
+.partner-card,
+.discuss-form-card,
+.contact-form-col {
+  transform: translate3d(0, 45px, 0) scale(0.98);
+}
+
+/* --- Brand Cells Domino Wave Assembly --- */
+.brands-table-card .brand-cell {
+  opacity: 0;
+  transform: translate3d(0, 25px, 0) scale(0.9);
+  transition: 
+    opacity 0.55s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.55s cubic-bezier(0.16, 1, 0.3, 1),
+    background 0.25s ease;
+}
+
+.brands-table-card.visible .brand-cell {
+  opacity: 1;
+  transform: translate3d(0, 0, 0) scale(1);
+}
+
+/* --- REARRANGED / ASSEMBLED STATE --- */
+.service-horizontal-card.visible,
+.step-card.visible,
+.contact-card.visible,
+.stat-item.visible,
+.about-triad > div.visible,
+.founder-card.visible,
+.dependable-card.visible,
+.partner-card.visible,
+.discuss-form-card.visible,
+.contact-form-col.visible {
+  opacity: 1;
+  transform: translate3d(0, 0, 0) rotate(0deg) scale(1) !important;
+}
+
+/* --- Stagger Delays --- */
+.stagger-1 { transition-delay: 0.05s !important; }
+.stagger-2 { transition-delay: 0.12s !important; }
+.stagger-3 { transition-delay: 0.19s !important; }
+.stagger-4 { transition-delay: 0.26s !important; }
+.stagger-5 { transition-delay: 0.33s !important; }
+.stagger-6 { transition-delay: 0.40s !important; }
+.stagger-7 { transition-delay: 0.47s !important; }
+.stagger-8 { transition-delay: 0.54s !important; }
+.stagger-9 { transition-delay: 0.61s !important; }
+.stagger-10 { transition-delay: 0.68s !important; }
+
+/* Brand Cell Wave Delays */
+.brands-table-card .brand-cell:nth-child(1) { transition-delay: 0.04s; }
+.brands-table-card .brand-cell:nth-child(2) { transition-delay: 0.08s; }
+.brands-table-card .brand-cell:nth-child(3) { transition-delay: 0.12s; }
+.brands-table-card .brand-cell:nth-child(4) { transition-delay: 0.16s; }
+.brands-table-card .brand-cell:nth-child(5) { transition-delay: 0.20s; }
+.brands-table-card .brand-cell:nth-child(6) { transition-delay: 0.24s; }
+.brands-table-card .brand-cell:nth-child(7) { transition-delay: 0.28s; }
+.brands-table-card .brand-cell:nth-child(8) { transition-delay: 0.32s; }
+.brands-table-card .brand-cell:nth-child(9) { transition-delay: 0.36s; }
+.brands-table-card .brand-cell:nth-child(10) { transition-delay: 0.40s; }
+
+/* --- Subtle Interactive Hover Floating Effect --- */
+.service-horizontal-card.visible:hover,
+.step-card.visible:hover,
+.contact-card.visible:hover,
+.stat-item.visible:hover {
+  transform: translate3d(0, -6px, 0) scale(1.018) !important;
+  box-shadow: 0 18px 38px rgba(7, 53, 41, 0.13) !important;
+}
+
+/* --- General Reveal Helpers --- */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.65s ease, transform 0.65s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .service-horizontal-card,
+  .step-card,
+  .contact-card,
+  .stat-item,
+  .about-triad > div,
+  .founder-card,
+  .dependable-card,
+  .partner-card,
+  .discuss-form-card,
+  .contact-form-col,
+  .brands-table-card .brand-cell,
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
+
+/* ========================================
+   TYPEWRITER CURSOR ANIMATION
+   ======================================== */
+@keyframes typewriterBlink {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+/* ========================================
+   HERO ACCENT PULSE ANIMATION
+   ======================================== */
+@keyframes pulseAccent {
+  0% {
+    transform: scale(1);
+    filter: drop-shadow(0 0 0 rgba(244, 184, 64, 0));
+  }
+  35% {
+    transform: scale(1.12);
+    filter: drop-shadow(0 0 16px rgba(244, 184, 64, 0.95));
+  }
+  65% {
+    transform: scale(1.05);
+    filter: drop-shadow(0 0 8px rgba(244, 184, 64, 0.6));
+  }
+  100% {
+    transform: scale(1);
+    filter: drop-shadow(0 0 0 rgba(244, 184, 64, 0));
+  }
+}
+
+.hero-pulse {
+  display: inline-block;
+  animation: pulseAccent 1.4s ease-in-out infinite;
+  transform-origin: center center;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+
