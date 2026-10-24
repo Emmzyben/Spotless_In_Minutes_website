@@ -1,9 +1,15 @@
 import React from 'react';
 import PageHeader from '../components/layout/PageHeader';
+import SEO from '../components/common/SEO';
 
 export default function Terms() {
   return (
     <>
+      <SEO
+        title="Terms & Conditions – Spotless in Minutes"
+        description="Review the terms and conditions for Spotless in Minutes services, payments, cancellations, and customer agreements."
+        canonical="https://www.spotlessinminutes.com/terms"
+      />
       <PageHeader title="Terms & Conditions" breadcrumb="Terms & Conditions" />
 
       <section className="legal-section">

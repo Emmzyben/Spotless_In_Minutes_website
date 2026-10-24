@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import ContactForm from '../components/contact/ContactForm';
 import CountUp from '../components/common/CountUp';
 import Typewriter from '../components/common/Typewriter';
+import SEO from '../components/common/SEO';
 import { useScrollAnimations } from '../hooks/useScrollAnimations';
 
 export default function Home() {
@@ -11,6 +12,12 @@ export default function Home() {
 
   return (
     <>
+      <SEO
+        title="Spotless in Minutes – Dependable Home & Business Cleaning"
+        description="Spotless In Minutes is your dependable partner for residential projects, logistics coordination, and oil & gas tool procurement in Houston, TX."
+        canonical="https://www.spotlessinminutes.com/"
+      />
+
       {/* ===== HERO SECTION ===== */}
       <section className="hero" id="home">
         <div className="hero-overlay"></div>
@@ -43,7 +50,12 @@ export default function Home() {
             </p>
 
             <div className="hero-actions">
-              <a href="#contact" className="btn-yellow">
+              <a
+                href="https://calendar.app.google/rusmCVfPmaHsim7U6"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-yellow"
+              >
                 Book a Service
               </a>
             </div>
@@ -213,7 +225,12 @@ export default function Home() {
                 <div className="service-badge-num">01</div>
                 <h3>Plumbing</h3>
                 <p>Leaks, fixtures, water heaters and drains, repaired and installed to code.</p>
-                <a href="#contact" className="btn-card-outline">
+                <a
+                  href="https://calendar.app.google/rusmCVfPmaHsim7U6"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-card-outline"
+                >
                   Book now
                 </a>
               </div>
@@ -228,7 +245,12 @@ export default function Home() {
                 <div className="service-badge-num">02</div>
                 <h3>Electrical</h3>
                 <p>Panels, lighting, outlets and safety checks handled by a careful crew.</p>
-                <a href="#contact" className="btn-card-outline">
+                <a
+                  href="https://calendar.app.google/rusmCVfPmaHsim7U6"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-card-outline"
+                >
                   Book now
                 </a>
               </div>
@@ -243,7 +265,12 @@ export default function Home() {
                 <div className="service-badge-num">03</div>
                 <h3>Remodeling</h3>
                 <p>Repair, replacement and seasonal tune-ups that keep Houston homes comfortable.</p>
-                <a href="#contact" className="btn-card-outline">
+                <a
+                  href="https://calendar.app.google/rusmCVfPmaHsim7U6"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-card-outline"
+                >
                   Book now
                 </a>
               </div>
@@ -258,7 +285,12 @@ export default function Home() {
                 <div className="service-badge-num">04</div>
                 <h3>Restoration and Mitigation</h3>
                 <p>Fast response after damage, from drying out to full repair. WRT certified.</p>
-                <a href="#contact" className="btn-card-outline">
+                <a
+                  href="https://calendar.app.google/rusmCVfPmaHsim7U6"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-card-outline"
+                >
                   Book now
                 </a>
               </div>

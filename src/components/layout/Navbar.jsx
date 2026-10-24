@@ -56,9 +56,14 @@ export default function Navbar() {
           </li>
         </ul>
 
-        <Link to="/contact" className="btn-primary nav-cta">
+        <a
+          href="https://calendar.app.google/rusmCVfPmaHsim7U6"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="btn-primary nav-cta"
+        >
           Get Started
-        </Link>
+        </a>
 
         <button
           className={`hamburger ${mobileOpen ? 'active' : ''}`}

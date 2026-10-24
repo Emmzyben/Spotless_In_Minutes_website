@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import PageHeader from '../components/layout/PageHeader';
 import ContactForm from '../components/contact/ContactForm';
+import SEO from '../components/common/SEO';
 import { useScrollAnimations } from '../hooks/useScrollAnimations';
 
 export default function Contact() {
@@ -20,6 +21,11 @@ export default function Contact() {
 
   return (
     <>
+      <SEO
+        title="Contact Us – Spotless in Minutes | Houston, TX"
+        description="Contact Spotless in Minutes for residential cleaning, repairs, electrical, plumbing, logistics, and tool procurement. Call (832) 989-1577 or book online."
+        canonical="https://www.spotlessinminutes.com/contact"
+      />
       <PageHeader title="Contact Us" breadcrumb="Contact Us" />
 
       {/* ===== MAIN CONTACT SECTION ===== */}

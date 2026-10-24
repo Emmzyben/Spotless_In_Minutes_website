@@ -1,6 +1,7 @@
 import React from 'react';
 import PageHeader from '../components/layout/PageHeader';
 import ContactForm from '../components/contact/ContactForm';
+import SEO from '../components/common/SEO';
 import { useScrollAnimations } from '../hooks/useScrollAnimations';
 
 export default function Services() {
@@ -53,6 +54,11 @@ export default function Services() {
 
   return (
     <>
+      <SEO
+        title="Our Services – Spotless in Minutes"
+        description="Comprehensive solutions for residential repairs, logistics coordination, plumbing, electrical, HVAC, mitigation, and oil & gas tool procurement in Houston, TX."
+        canonical="https://www.spotlessinminutes.com/services"
+      />
       <PageHeader title="Services" breadcrumb="Services" />
 
       {/* ===== SERVICES SECTION ===== */}
@@ -77,7 +83,12 @@ export default function Services() {
                   <div className="service-badge-num">{svc.num}</div>
                   <h3>{svc.title}</h3>
                   <p>{svc.desc}</p>
-                  <a href="#contact" className="btn-card-outline">
+                  <a
+                    href="https://calendar.app.google/rusmCVfPmaHsim7U6"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn-card-outline"
+                  >
                     Book now
                   </a>
                 </div>

@@ -1,9 +1,15 @@
 import React from 'react';
 import PageHeader from '../components/layout/PageHeader';
+import SEO from '../components/common/SEO';
 
 export default function Privacy() {
   return (
     <>
+      <SEO
+        title="Privacy Policy – Spotless in Minutes"
+        description="Learn how Spotless in Minutes collects, uses, protects, and handles your personal information."
+        canonical="https://www.spotlessinminutes.com/privacy"
+      />
       <PageHeader title="Privacy Policy" breadcrumb="Privacy Policy" />
 
       <section className="legal-section">

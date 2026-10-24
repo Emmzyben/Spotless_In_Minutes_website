@@ -2,6 +2,7 @@ import React from 'react';
 import PageHeader from '../components/layout/PageHeader';
 import ContactForm from '../components/contact/ContactForm';
 import CountUp from '../components/common/CountUp';
+import SEO from '../components/common/SEO';
 import { useScrollAnimations } from '../hooks/useScrollAnimations';
 
 export default function About() {
@@ -9,6 +10,11 @@ export default function About() {
 
   return (
     <>
+      <SEO
+        title="About Us – Spotless in Minutes"
+        description="Learn more about Spotless in Minutes, our mission, vision, and leadership team providing dependable cleaning and home services in Houston, TX."
+        canonical="https://www.spotlessinminutes.com/about"
+      />
       <PageHeader title="About" breadcrumb="About" />
 
       {/* ===== ABOUT INTRO STRIP ===== */}
